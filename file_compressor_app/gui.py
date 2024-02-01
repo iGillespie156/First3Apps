@@ -10,7 +10,7 @@ label2 = pg.Text("Select destination folder: ")
 input2 = pg.Input()
 choose_button2 = pg.FolderBrowse("Choose")
 
-compress_button = sg.Button("Compress")
+compress_button = pg.Button("Compress")
 
 window = pg.Window('File Zipper', layout=[[label1, input1, choose_button1],
                                           [label2, input2, choose_button2],
