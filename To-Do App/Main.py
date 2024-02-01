@@ -8,6 +8,8 @@ prompt = "Type add, show, edit, complete, or exit: "
 
 # 'A','B','C','D','E' - for list generation
 now = time.strftime("%b %d, %Y %H:%M:%S")
+
+print("The time is below:")
 print("It is", now)
 
 while True:
