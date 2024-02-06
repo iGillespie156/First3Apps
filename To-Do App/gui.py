@@ -3,10 +3,10 @@ import Functions as fun
 import PySimpleGUI as pg
 
 label = pg.Text("Type in a to-do:")
-input_box = pg.InputText(tooltip="Enter to-do", key = "todo")
+input_box = pg.InputText(tooltip="Enter to-do", key="todo")
 add_button = pg.Button("Add")
 list_box = pg.Listbox(values=fun.get_todos(), key="todos",
-                      enable_events=True, size=[45,10])
+                      enable_events=True, size=(45, 10))
 edit_button = pg.Button("Edit")
 
 window = pg.Window('My To-Do App',
@@ -23,7 +23,7 @@ while True:
     match event:
         case "Add":
             todos = fun.get_todos()
-            new_todo = values["todo"] +'\n'
+            new_todo = values["todo"] + '\n'
             todos.append(new_todo)
             fun.write_todos(todos)
             window['todos'].update(values=todos)
@@ -31,7 +31,6 @@ while True:
         case "Edit":
             todo_to_edit = values['todos'][0]
             new_todo = values['todo'] + '\n'
-
 
             todos = fun.get_todos()
             todo_index = todos.index(todo_to_edit)
@@ -45,11 +44,6 @@ while True:
         case pg.WIN_CLOSED:
             break
 
-
-
-
-    print(event)
-    print(values)
 
 window.close()
 
